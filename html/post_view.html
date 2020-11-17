@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>create post news</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="php/post_query.php">
+</head>
+
+<body>
+    <div style="margin-top: 4rem;margin-left: 6rem;margin-right: 6rem;background-color: #e3e3e3;padding-bottom: 2rem;padding-top: 2rem;">
+        <form action="php/post_query.php" method="post">
+            <div class="container">
+                <h3 style="text-align: center;">Добавить статью</h3>
+                <div class="form-row" style="margin-top: 2rem;">
+                    <div class="col">
+                        <input type="file" name="file" style="margin-left: 5rem;margin-top: 1rem;">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" name="topic" style="margin-top: 1rem;max-width: 28rem;" placeholder="Загаловок статьи">
+                        <input class="form-control" type="text" name="text" style="margin-top: 1rem;max-width: 28rem;" placeholder="содержание">
+                        <button class="btn btn-primary"
+                            type="submit" name="add_post" style="margin-top: 1rem;">Добавить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

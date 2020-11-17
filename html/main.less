@@ -1,0 +1,148 @@
+// out: style.css, compress: true
+
+html,
+body {
+    font-family: 'Crimson', serif;
+    font-size: 100%; // 16px in default
+    background: #d4d4d4;
+}
+
+.one-third,
+.two-third,
+.half,
+.full {
+    margin-top: 20px;
+
+    height: 625px;
+
+    & img {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+.full {
+    position: relative;
+    height: 500px;
+
+    & .main__word {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+    }
+
+    & img {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+.main__content {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+    background-color: #fff;
+    
+    transition: .5s;
+    
+    &:hover {
+        background-color: #fff7f8;
+        text-decoration: none;
+    }
+}
+
+.main__word {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    padding: 25px;
+    color: black;
+
+    & h1 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+    }
+
+    & p {
+        letter-spacing: 1px;
+        line-height: 1.7;
+        max-height: 300px;
+        overflow: hidden;
+    }
+}
+
+.post-meta {
+    position: absolute;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #eb465f;
+    bottom: 25px;
+}
+
+.post-meta__date {
+    margin-left: 10px;
+}
+
+.go_top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: .3s;
+    
+    & img {
+        width: 50px;
+        height: 50px;
+        padding: 15px 15px;
+        border-radius: 20%;
+        background-color: #b1b1b1;
+        opacity: 70%;
+    }
+}
+
+.invisible {
+    bottom: -100px;
+    color: red;
+    transition: .3s;
+}
+
+@media (max-width: 1355px) and (min-width: 1200px) {
+    .go_top {
+        bottom: -100px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1165px) {
+    .go_top {
+        bottom: -100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .full {
+        height: 625px;
+
+        & .main__word {
+            height: 50%;
+            position: static;
+        }
+
+        & img {
+            width: 100%;
+            height: 50%;
+        }
+    }
+}
+
+@media (max-width: 670px) {
+    main__word p {
+        max-height: 200px;
+    }
+}
+
+/* BLOCKS */
+
+@import url(blocks/header.less); // header
+@import url(blocks/intro.less); // intro
+@import url(blocks/topic.less); // topic page
+@import url(blocks/footer.less); // footer
