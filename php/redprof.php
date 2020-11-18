@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('linkdb.php');
 
 
@@ -16,7 +18,7 @@ class chenges_profile extends linkBd{
 			or die(mysqli_error($link));
 
 		$id = $_SESSION['loged_user'];
-		$id = "1111@mail.ru67";
+		
 
 		$result = mysqli_query($link, "SELECT * FROM `user_acounts` WHERE email = '$id' ");
 		$result = mysqli_fetch_assoc($result);
@@ -74,16 +76,16 @@ class chenges_profile extends linkBd{
 		$link = mysqli_connect($this->host,$this->user_db,$this->password_db,$this->database_db)
 			or die(mysqli_error($link));
 
-		$id = "1111@mail.ru67";
+		$id = $_SESSION['loged_user'];
 		$result = mysqli_query($link, "SELECT * FROM `user_acounts` WHERE email = '$id' ");
 		$result = mysqli_fetch_assoc($result);
 
 		$name = $result['name'];
 	
-			echo "
-				<input class='form-control' type='text' name='name' value='$name' style='margin-top: 3rem; max-width: 17rem;'>
-            	<input class='form-control' type='email' name='email' value='".$result['email']."' style='margin-top: 1rem;max-width: 17rem;'>
-            ";
+			echo '
+				<input class="form-control" type="text" name="name" value="'.$name.'" style="margin-top: 3rem; max-width: 17rem;">
+            	<input class="form-control" type="email" name="email" value= '.$result['email'].' style="margin-top: 1rem;max-width: 17rem;">
+            ';
 	}
 }
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include('linkdb.php');
 
@@ -17,7 +18,7 @@ class prod_post extends linkBd{
 			$file = $_FILE['file'];
 
 			$email = $_SESSION['loged_user'];
-			$email = '111';
+
 
 
 			mysqli_query($link, "INSERT INTO `post` VALUES(NULL, '$email', '$topic', '$text', '$file' )");

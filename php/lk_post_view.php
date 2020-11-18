@@ -11,7 +11,6 @@ class form_view_lk extends linkBd{
                 or die(mysqli_error($link));
 
         $user_email = $_SESSION['loged_user'];
-        $user_email = 111;
 
         $result = mysqli_query($link, " SELECT * FROM `post` WHERE email =  '$user_email' ");
 

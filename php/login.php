@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include('linkdb.php');
 
@@ -38,7 +39,7 @@ class login extends linkBd{
 
 				if ($check_password['password'] == $password)
 				{
-					$_SESSION['loged_user'] = $check_id;
+					$_SESSION['loged_user'] = $email;
 					//переход на страницу и занесение email в глобальный массив
 					//проверка на наличие прав пользователя 
 					$user_name = $user['email']; 

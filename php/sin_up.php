@@ -23,12 +23,12 @@ class Autoris extends linkBd{
 		$query = "INSERT INTO `user_acounts` VALUES(NULL, '$email' ,'$password', '$name')";
 		$rights = mysqli_query($link, "INSERT INTO `user_rights` VALUES(NULL, '$email', NULL, '1' ) ");
 
-			$_SESSION['loged_user'] = $email;
+		$_SESSION['loged_user'] = $email;
 
 		$result = mysqli_query($link, $query);
 
 		if ($result and $rights){
-				echo "вы зарегистрированы";
+				//echo "вы зарегистрированы";
 				
 				header('Location: http://sasha/auth/LogIn.php');//Сюда воткнешь ссылку на страницу
 				exit();
